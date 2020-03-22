@@ -56,9 +56,9 @@ void GetCode(){                  //Getting code sequence
        a=0;
        j=0; 
        char key = keypad.getKey();                              
-     while(key != '#'){                                     //The user press A to confirm the code otherwise he can keep typing
+     while(key != '#'){                                     //The user press # to confirm the code otherwise he can keep typing
            key = keypad.getKey();                         
-             if(key != NO_KEY && key != '#' ){       //If the char typed isn't A and neither "nothing"
+             if(key != NO_KEY && key != '#' ){       //If the char typed isn't # and neither "nothing"
               lcd.setCursor(j,1);                                  //This to write "*" on the LCD whenever a key is pressed it's position is controlled by j
               lcd.print("*");
               j++;
@@ -72,10 +72,10 @@ void GetCode(){                  //Getting code sequence
             }
 }
 
-void OpenDoor(){             //Lock opening function open for 3s
+void OpenDoor(){             //Lock opening function open for 10s
   lcd.clear();
   lcd.print("Nice");//With a message printed
-  digitalWrite(redPin, LOW);
+  digitalWrite(redPin, LOW); //Included lights, cause why not
   digitalWrite(greenPin, HIGH);
   servo1.write(-80);
   delay(10000);
