@@ -79,7 +79,6 @@ void GetCode(){                  //Getting code sequence
                  
             }
             else{
-                //tone(buzzer, key * 10, 200);
                 a--;}                                            //if the character typed is wrong a decrements and cannot equal the size of code []
             }
             }
